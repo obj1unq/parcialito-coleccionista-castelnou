@@ -67,8 +67,51 @@
 // PUNTO 1: COLECCIONES
 object coleccionista {
 	
-	//TODO: Completar la implementacion de este objeto		
-
+	//TODO: Completar la implementacion de este objeto	
+	
+	var elementos = #{}
+	
+	method a() = elementos
+	
+	method agregarElemento(unElemento){
+		elementos.add(unElemento)
+	}
+	method quitarElemento(unElemento){
+		elementos.remove(unElemento)
+	}
+	method objetosFragiles(){
+		return elementos.filter({elem => elem.esFragil()})
+	}
+	method objetoFragilMasCaro(){
+		return self.objetosFragiles().max({elem => elem.valor()})
+	}
+	
+	method valorEnObjetosFragiles(){
+		self.objetosFragiles().sum({elem => elem.valor()})	
+	}
+	
+	method valorEnCategoria(unaCategoria){
+		return elementos.filter({elem => elem.categoria() == unaCategoria}).sum({elem => elem.valor()})		
+	}
+	
+	method existeElementoDe(unaCategoria){
+		return 	elementos.any({elem => elem.categoria() == unaCategoria})
+	}
+	
+	method categorias(){
+	//var a = #{}
+	
+	//a.add(elementos.categoria())
+		// Pendiente como obtener un conjunto de otro tipo
+		
+	}
+	
+	method todosValiosos(){
+		
+		return 	elementos.all({elem => elem.valor() > 600})
+	}
+	
+	
 }
 
 
@@ -109,7 +152,42 @@ object musica {
 // PUNTO 2: POLIMORFISMO. 
 object guitarraElectrica {
    //TODO Completar la implementacion de este objeto
+   
+   var valorBase = 10000
+   var mics = #{gibson, diMarzio}
+   var estuche = estucheFlexible
+   
+   method agregarMic(unMic){
+		mics.add(unMic)
+	}
+	method quitarMic(unMic){
+		mics.remove(unMic)
+	}
+	
+   method cambiaEstuche(unEstuche){ estuche = unEstuche }	
+   
+   method valor() = valorBase + mics.sum({elem => elem.valor()})
+   
+   method esFragil() = estuche.dureza()
+   
+   method categoria() = musica
 }
 
 //TODO: agregar los objetos que falten! Si no agregaste ninguno repensá tu solución; pista: el punto se llama "POLIMORFISMO" 
 
+object gibson{
+	
+	method valor() = 1000
+}
+object diMarzio{
+	
+	method valor() = 800
+}
+
+object estucheFlexible{
+	method dureza() = false
+}
+
+object estucheRigido{
+	method dureza() = true
+}
