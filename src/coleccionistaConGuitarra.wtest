@@ -15,15 +15,18 @@ describe "test del coleccionista usando la guitarra"{
 		assert.that(coleccionista.existeElementoDe(musica))
 	}
 	
+	//CORRECCION: este test falla, nunca se configuró correctamente
 	test "valor usando microfonos gibson" {
 		//TODO: tal vez necesites invocar más cosas aquí para sconfigurar la guitarra
 		assert.equals(11000, coleccionista.valorEnCategoria(musica))
 	}
-	
+	//CORRECCION: este test falla, nunca se configuró correctamente
 	test "valor usando microfonos Di Marzio" {
 		//TODO: tal vez necesites invocar más cosas aquí para configurar la guitarra
 		assert.equals(10800, coleccionista.valorEnCategoria(musica))
 	}
+/* 	 
+    CORRECCION: Comento los test que no compilan para poder ejecutar los que sí
 	
 	test "Fragilidad con un estuche rigido" {
 		//TODO: tal vez necesites invocar más cosas aquí para configurar la guitarra
@@ -34,4 +37,6 @@ describe "test del coleccionista usando la guitarra"{
 		//TODO: tal vez necesites invocar más cosas aquí para configurar la guitarra
 		assert.that(coleccionista.valorEnObjetosFragiles()>0)	
 	}
+	
+*/
 }

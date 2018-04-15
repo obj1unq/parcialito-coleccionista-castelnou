@@ -17,11 +17,12 @@ describe "tests del coleccionista "{
 	test "objetos fragil mas caro" {
 		assert.equals(discoViniloLaBalsa, coleccionista.objetoFragilMasCaro())
 	}
-
+/* Correccion: comento el test que no compila para ejecutar los que sí
+  
 	test "valor en objetos fragiles" {
 		assert.equals(2000, coleccionista.valorEnObjetosFragiles())
 	}
-
+*/
 	test "valor en juguetes" {
 		assert.equals(1300, coleccionista.valorEnCategoria(juguete))
 	}
@@ -32,6 +33,7 @@ describe "tests del coleccionista "{
 
 	test "test existe elemento de categoria (juguete y musica" {
 		assert.that(coleccionista.existeElementoDe(musica))
+		//Correccion: agrego ')' para que compile el test
 		assert.that(coleccionista.existeElementoDe(juguete))
 	}
 
@@ -42,7 +44,9 @@ describe "tests del coleccionista "{
 		assert.notThat(coleccionista.existeElementoDe(musica))
 	}
 	
-	test "categorias" {
+/*  Correccion: Comento los test que no compilan para ejecutar los que sí
+ 
+  	test "categorias" {
 		assert.equals(#{juguete, musica}, coleccionista.categorias())
 	}
 	
@@ -51,7 +55,7 @@ describe "tests del coleccionista "{
 		coleccionista.quitarElemento(cassetteCantaninio)
 		assert.equals(#{juguete}, coleccionista.categorias())
 	}
-	
+*/	
 	test "todos valiososo (no) " {
 		assert.notThat(coleccionista.todosValiosos())
 	}

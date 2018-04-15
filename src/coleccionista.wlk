@@ -1,3 +1,14 @@
+//CORRECCION Nota: Regular
+
+// CORRECCION  Los test no compilan. Se  nota que falta más horas frente a la computadora para ejercitar. 
+// CORRECCION  La única manera de aprender a resolver esos errores técnicos que presenta este exámen es con más ejercicio.
+// CORRECCION  Conceptualmente no estás tan mal, falló el no saber como resolver usando map (el map es un método muy importante y hay que aprenderlo)
+// CORRECCION Y luego hubo un error de interpretación de enunciado (asumir que se puede usar más de un micrófono). No son errores conceptuales graves,
+// CORRECCION pero recordá que un buen programador no solo entiende los conceptos, si no que también es capaz de aplicarlos en un programa que ande!
+// CORRECCION necesitás más horas de práctica.
+
+
+
 /*     Parcialito: Coleccionista
  * 	
  *   Se trata de una aplicación que sirve para que una persona, dueña de una galería de elementos coleccionables
@@ -71,6 +82,7 @@ object coleccionista {
 	
 	var elementos = #{}
 	
+	//CORRECCION: Mejorar el nombre de este mensaje, aunque no es necesario que exista!
 	method a() = elementos
 	
 	method agregarElemento(unElemento){
@@ -86,6 +98,7 @@ object coleccionista {
 		return self.objetosFragiles().max({elem => elem.valor()})
 	}
 	
+	//CORRECCION: Falta el return, por eso no compila ni siquiera el test.
 	method valorEnObjetosFragiles(){
 		self.objetosFragiles().sum({elem => elem.valor()})	
 	}
@@ -104,6 +117,7 @@ object coleccionista {
 	//a.add(elementos.categoria())
 		// Pendiente como obtener un conjunto de otro tipo
 		
+		//CORRECCION: resolver usando map y asSet
 	}
 	
 	method todosValiosos(){
@@ -154,7 +168,7 @@ object guitarraElectrica {
    //TODO Completar la implementacion de este objeto
    
    var valorBase = 10000
-   var mics = #{gibson, diMarzio}
+   var mics = #{gibson, diMarzio}  //CORRECCION: Solo un juego de microfonos se usa a la vez, gibson ó DiMarzio
    var estuche = estucheFlexible
    
    method agregarMic(unMic){
